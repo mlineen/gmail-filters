@@ -3,7 +3,8 @@ const ID = "gmail-filters-extension";
 function addContainer() {
   var container = document.createElement("ul");
   container.setAttribute("id", ID);
-  document.body.insertAdjacentElement("afterbegin", container);
+  //document.body.insertAdjacentElement("afterbegin", container);
+  document.getElementsByClassName("nM")[0].insertAdjacentElement("afterbegin", container);
 }
 
 function addFilter(label, string, moments) {
@@ -41,34 +42,36 @@ function wwwFormUrlEncoded(href) {
   Create a container
   Add filters
 */
-addContainer();
+setTimeout(function() {
+  addContainer();
 
-addFilter(
-  "Today",
-  "in:inbox after:DATE",
-  [moment()]
-);
+  addFilter(
+    "Today",
+    "in:inbox after:DATE",
+    [moment()]
+  );
 
-addFilter(
-  "Yesterday",
-  "in:inbox after:DATE before:DATE",
-  [moment().subtract(1, "days"), moment()]
-);
+  addFilter(
+    "Yesterday",
+    "in:inbox after:DATE before:DATE",
+    [moment().subtract(1, "days"), moment()]
+  );
 
-addFilter(
-  "This Week",
-  "in:inbox after:DATE",
-  [moment().startOf("isoWeek")]
-);
+  addFilter(
+    "This Week",
+    "in:inbox after:DATE",
+    [moment().startOf("isoWeek")]
+  );
 
-addFilter(
-  "Last Week",
-  "in:inbox after:DATE before:DATE",
-  [moment().startOf("isoWeek").subtract(1, "weeks"), moment().startOf("isoWeek")]
-);
+  addFilter(
+    "Last Week",
+    "in:inbox after:DATE before:DATE",
+    [moment().startOf("isoWeek").subtract(1, "weeks"), moment().startOf("isoWeek")]
+  );
 
-addFilter(
-  "This Month",
-  "in:inbox after:DATE",
-  [moment().startOf('month')]
-);
+  addFilter(
+    "This Month",
+    "in:inbox after:DATE",
+    [moment().startOf('month')]
+  );
+}, 5000);
