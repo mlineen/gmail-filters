@@ -1,9 +1,9 @@
 const ID = "gmail-filters-extension";
 
 function addContainer() {
-  var div = document.createElement("div");
-  div.setAttribute("id", ID);
-  document.body.insertAdjacentElement("afterbegin", div);
+  var container = document.createElement("ul");
+  container.setAttribute("id", ID);
+  document.body.insertAdjacentElement("afterbegin", container);
 }
 
 function addFilter(label, string, moments) {
@@ -13,10 +13,12 @@ function addFilter(label, string, moments) {
 }
 
 function createLink(value, href) {
+  var li = document.createElement("li");
   var link = document.createElement("a");
   link.setAttribute("href", href);
   link.appendChild(document.createTextNode(value));
-  return link;
+  li.appendChild(link);
+  return li;
 }
 
 function filterToHref(filter) {
