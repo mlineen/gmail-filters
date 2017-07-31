@@ -46,6 +46,12 @@ setTimeout(function() {
   addContainer();
 
   addFilter(
+    "Unread",
+    "in:inbox label:unread",
+    []
+  );
+
+  addFilter(
     "Today",
     "in:inbox after:DATE",
     [moment()]
@@ -74,4 +80,11 @@ setTimeout(function() {
     "in:inbox after:DATE",
     [moment().startOf('month')]
   );
+
+  addFilter(
+    "Last Month",
+    "in:inbox after:DATE",
+    [moment().startOf('month').subtract(1, "months")]
+  );
+
 }, 5000);
