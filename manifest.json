@@ -1,16 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Gmail Filters",
-  "version": "1.0",
+  "name": "Gmail Quick Filters",
+  "description": "Adds links for filtering Gmail quickly by unread inbox messages and by predefined time ranges.",
+  "version": "0.1",
 
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*"],
-      "js": ["moment.2.18.1.min.js", "filters.js"]
+      "css": ["filters.css"],
+      "js": ["moment.min.js", "filters.js"]
     }
-  ],
-
-  "permissions": [
-    "https://mail.google.com/*"
   ]
 }

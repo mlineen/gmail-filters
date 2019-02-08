@@ -1,0 +1,16 @@
+#gmail-filters-extension {
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  padding: 0 0 8px 0;
+}
+
+#gmail-filters-extension a {
+  padding: 0 0.75rem;
+  color: blue;
+  cursor: pointer;
+}
+
+#gmail-filters-extension a:hover {
+  font-weight: bold;
+}
